@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Почему STHost? - Концепция страницы</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        /* БАЗОВЫЕ СТИЛИ (из вашего сайта) */
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+        
+        :root {
+            --dark-bg: #121a2f;
+            --card-bg: #1a2340;
+            --border-color: #2a3559;
+            --primary-blue: #007bff;
+            --text-light: #fff;
+            --text-muted: #a9b3d0;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            color: var(--text-light);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 100px 0;
+        }
+
+        /* --- СТИЛИ НОВОЙ СТРАНИЦЫ --- */
+
+        /* 1. Герой-секция */
+        .hero-section {
+            text-align: center;
+            padding-bottom: 50px;
+        }
+        .hero-section h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        .hero-section h1 span {
+            color: var(--primary-blue);
+        }
+        .hero-section .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 30px auto;
+        }
+        .btn-primary {
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px var(--primary-blue);
+        }
+
+        /* 2. Динамичные блоки преимуществ */
+        .feature-row {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            margin-bottom: 100px;
+        }
+        /* Чередование блоков */
+        .feature-row:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        .feature-text { flex: 1; }
+        .feature-visual { flex: 1; }
+        .feature-text .icon {
+            font-size: 2rem;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+        .feature-text h2 {
+            font-size: 2.2rem;
+            margin: 0 0 20px 0;
+        }
+        .feature-text p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+        .feature-visual img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        /* 3. Секция с отзывами */
+        .testimonials-section {
+            text-align: center;
+        }
+        .testimonials-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+        }
+        .testimonial-card {
+            background-color: var(--card-bg);
+            padding: 40px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .testimonial-card p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            font-style: italic;
+            color: var(--text-muted);
+            margin: 0 0 25px 0;
+        }
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+        .testimonial-author span {
+            font-weight: 400;
+            color: var(--primary-blue);
+        }
+
+        /* 4. Финальный CTA */
+        .final-cta {
+            background-color: var(--card-bg);
+            text-align: center;
+            padding: 60px 40px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+        }
+        .final-cta h2 {
+            font-size: 2.5rem;
+            margin: 0 0 20px 0;
+        }
+        .final-cta p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+        }
+
+        /* АНИМАЦИИ для "жизни" */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero-section container">
+        <h1 class="animate-on-scroll">Ваш сайт заслуживает <span>большего,</span><br>чем просто хостинг.</h1>
+        <p class="subtitle animate-on-scroll">Мы создали STHost не для того, чтобы просто размещать файлы в сети. Мы создали платформу для роста вашего бизнеса, где скорость, безопасность и поддержка — это стандарт, а не опция.</p>
+        <a href="#plans" class="btn-primary animate-on-scroll">Выбрать свой тариф</a>
+    </section>
+
+    <div class="container">
+        <div class="feature-row animate-on-scroll">
+            <div class="feature-text">
+                <div class="icon"><i class="fas fa-fighter-jet"></i></div>
+                <h2>Скорость, которая продает</h2>
+                <p>Каждая миллисекунда задержки стоит вам клиентов. Наши серверы на NVMe SSD и оптимизированный стек ПО загружают ваш сайт молниеносно, удерживая посетителей и повышая конверсию.</p>
+            </div>
+            <div class="feature-visual">
+                <img src="https://via.placeholder.com/450x300/1a2340/007bff?text=Visual+for+Speed" alt="Иллюстрация скорости">
+            </div>
+        </div>
+
+        <div class="feature-row animate-on-scroll">
+            <div class="feature-text">
+                <div class="icon"><i class="fas fa-shield-virus"></i></div>
+                <h2>Безопасность, которая дает спать спокойно</h2>
+                <p>Вам не нужно быть экспертом по кибербезопасности. Наша проактивная DDoS-защита и ежедневные бэкапы работают 24/7, охраняя ваш бизнес, пока вы сфокусированы на его развитии.</p>
+            </div>
+            <div class="feature-visual">
+                <img src="https://via.placeholder.com/450x300/1a2340/007bff?text=Visual+for+Security" alt="Иллюстрация безопасности">
+            </div>
+        </div>
+        
+        <div class="feature-row animate-on-scroll">
+            <div class="feature-text">
+                <div class="icon"><i class="fas fa-hands-helping"></i></div>
+                <h2>Поддержка, которая действительно помогает</h2>
+                <p>Забудьте о роботах и ответах по шаблону. Наша команда — это живые эксперты, которые говорят с вами на одном языке и решают проблемы, а не создают заявки.</p>
+            </div>
+            <div class="feature-visual">
+                <img src="https://via.placeholder.com/450x300/1a2340/007bff?text=Visual+for+Support" alt="Иллюстрация поддержки">
+            </div>
+        </div>
+    </div>
+    
+    <section class="testimonials-section container animate-on-scroll">
+         <h2>Нам доверяют сотни проектов</h2>
+         <div class="testimonial-card">
+            <p>"Перенес все свои клиентские сайты на STHost и забыл о проблемах. Скорость выросла, а тикеты в поддержку стали редкостью. Это лучший хостинг, с которым я работал за 10 лет."</p>
+            <div class="testimonial-author">
+                Александр Петров, <span>Веб-разработчик</span>
+            </div>
+         </div>
+    </section>
+
+    <section class="final-cta container animate-on-scroll">
+        <h2>Готовы к новому уровню?</h2>
+        <p>Хватит мириться с компромиссами. Выберите производительность, надежность и поддержку, которых заслуживает ваш проект.</p>
+        <a href="#plans" class="btn-primary">Посмотреть тарифы</a>
+    </section>
+
+
+    <script>
+        // Простой и эффективный скрипт для анимации при скролле
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1 // Анимация начнется, когда 10% элемента видно
+        });
+
+        const elementsToAnimate = document.querySelectorAll('.animate-on-scroll');
+        elementsToAnimate.forEach(el => observer.observe(el));
+    </script>
+
+</body>
+</html>
